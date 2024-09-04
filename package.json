@@ -1,5 +1,5 @@
 {
-	"name": "wedding-website",
+	"name": "christiangotmaried",
 	"version": "1.0.1",
 	"description": "A wedding website with loads of features.",
 	"main": "npmfile.js",
@@ -8,7 +8,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+ssh://git@github.com/erdierivera/jeromegotmaried.git"
+		"url": "git+ssh://git@github.com/erdierivera/christiangotmaried.git"
 	},
 	"keywords": [
 		"wedding",
@@ -17,7 +17,7 @@
 	],
 	"author": "Erdie Rivera",
 	"license": "GPL-3.0",
-	"homepage": "https://github.com/erdierivera/jeromegotmaried",
+	"homepage": "https://github.com/erdierivera/christiangotmaried",
 	"devDependencies": {
 		"gulp": "^4.0.2",
 		"gulp-rename": "^1.4.0",
