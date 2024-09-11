@@ -13,6 +13,14 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('./css'));
 });
 
+// compile scss to css
+gulp.task('sass', function () {
+    return gulp.src('./sass/responsive-clock.scss')
+        .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(rename({basename: 'responsive-clock.min'}))
+        .pipe(gulp.dest('./css'));
+});
+
 // watch changes in scss files and run sass task
 gulp.task('sass:watch', function () {
     gulp.watch('./sass/**/*.scss', ['sass']);
