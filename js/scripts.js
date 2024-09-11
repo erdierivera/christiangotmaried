@@ -6,10 +6,7 @@ $(document).ready(function () {
     audio.volume = 0.2;
     document.body.appendChild(audio);
     audio.src = "audio/Dionela ft. Jay R - sining.mp3";
-
-    document.body.addEventListener("mousemove", function () {
-        audio.play();
-    });
+    audio.play();
 
     Audio.prototype.play = (function (play) {
         return function () {
