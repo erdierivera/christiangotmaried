@@ -2,13 +2,15 @@ $(document).ready(function () {
 
     var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-    var audio = new Audio();
+    var audio = document.createElement("AUDIO");
     audio.volume = 0.2;
     document.body.appendChild(audio);
     audio.src = "audio/Dionela ft. Jay R - sining.mp3";
 
     document.body.addEventListener("mousemove", function () {
-        audio.play();
+        if (isChrome) {
+            audio.play();
+        }
     });
 
     Audio.prototype.play = (function (play) {
