@@ -5,7 +5,7 @@ $(document).ready(function () {
     var audio = document.createElement("AUDIO");
     audio.volume = 0.2;
     document.body.appendChild(audio);
-    audio.src = "audio/Dionela ft. Jay R - sining.mp3";
+    audio.src = "audio/Adie - KABADO.mp3";
 
     document.body.addEventListener("mousemove", function () {
         if (isChrome) {
