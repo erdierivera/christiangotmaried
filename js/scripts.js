@@ -212,12 +212,12 @@ $(document).ready(function () {
         var data = $(this).serialize();
         console.log(data);
         $('#alert-wrapper').html(alert_markup('info', '<strong>Just a sec!</strong> We are saving your details.'));
-
+        
         if (MD5($('#invite_code').val()) !== '1ae215c6cd4ec2b76cc4a74d1595df37'
-            && MD5($('#invite_code').val()) !== 'd4688c53657959ca7fd8ecc5f2ea74e9') {
+            && MD5($('#invite_code').val()) !== 'b4d6cd609db6bc5e53a1de34121c7106') {
             $('#alert-wrapper').html(alert_markup('danger', '<strong>Sorry!</strong> Your invite code is incorrect.'));
         } else {
-            $.post("https://script.google.com/macros/s/AKfycbzMqQ_7KOPZTCnw8sL2nT6yWO_ZDjli-KYuuVf0Geu-SgnACpQwK7xeWH5zjo_45OMt/exec", data)
+            $.post("https://script.google.com/macros/s/AKfycbxEZfypLbZMw1-519rtUYDOG1iJY6F6HtT23SAe_XCW7TO3JwhwOe1JOTAabVZn1Bd2/exec", data)
 							.done(function (data) {
 								console.log(data);
 								if (data.result === "error") {
