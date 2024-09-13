@@ -1,25 +1,34 @@
 $(document).ready(function () {
+    var soundEffect = new Audio();
+    soundEffect.autoplay = true;
 
-    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    // onClick of first interaction on page before I need the sounds
+    // (This is a tiny MP3 file that is silent and extremely short - retrieved from https://bigsoundbank.com and then modified)
+    soundEffect.src = "data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV";
 
-    var audio = document.createElement("AUDIO");
-    audio.volume = 0.2;
-    document.body.appendChild(audio);
-    audio.src = "audio/Adie - KABADO.mp3";
+    // later on when you actually want to play a sound at any point without user interaction
+    soundEffect.src = 'audio/Adie - KABADO.mp3';
+    soundEffect.play();
+    // var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-    document.body.addEventListener("mousemove", function () {
-        if (isChrome) {
-            audio.play();
-        }
-    });
+    // var audio = document.createElement("AUDIO");
+    // audio.volume = 0.2;
+    // document.body.appendChild(audio);
+    // audio.src = "audio/Adie - KABADO.mp3";
 
-    Audio.prototype.play = (function (play) {
-        return function () {
-            var audio = this,
-                args = arguments,
-                promise = play.apply(audio, args);
-        };
-    })(Audio.prototype.play);
+    // document.body.addEventListener("mousemove", function () {
+    //     if (isChrome) {
+    //         audio.play();
+    //     }
+    // });
+
+    // Audio.prototype.play = (function (play) {
+    //     return function () {
+    //         var audio = this,
+    //             args = arguments,
+    //             promise = play.apply(soundEffect, args);
+    //     };
+    // })(Audio.prototype.play);
 
     ("use strict");
 
