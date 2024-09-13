@@ -13,6 +13,12 @@ $(document).ready(function () {
         }
     });
 
+    document.body.addEventListener("touchmove", function () {
+        if (isChrome) {
+            audio.play();
+        }
+    });
+
     Audio.prototype.play = (function (play) {
         return function () {
             var audio = this,
@@ -199,7 +205,7 @@ $(document).ready(function () {
 
 				// Event Description
 				description:
-					"We can't wait to see you on our big day. For any queries or issues, please contact Mr. Jerome Almira at 09123456789.",
+					"We can't wait to see you on our big day. For any queries or issues, please contact Mr. Jerome Almira at +639173007282.",
 			},
 		});
 
