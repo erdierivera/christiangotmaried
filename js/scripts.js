@@ -1,34 +1,25 @@
 $(document).ready(function () {
-    var soundEffect = new Audio();
-    soundEffect.autoplay = true;
 
-    // onClick of first interaction on page before I need the sounds
-    // (This is a tiny MP3 file that is silent and extremely short - retrieved from https://bigsoundbank.com and then modified)
-    soundEffect.src = "data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV";
+    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 
-    // later on when you actually want to play a sound at any point without user interaction
-    soundEffect.src = 'audio/Adie - KABADO.mp3';
-    soundEffect.play();
-    // var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    var audio = document.createElement("AUDIO");
+    audio.volume = 0.2;
+    document.body.appendChild(audio);
+    audio.src = "audio/Adie - KABADO.mp3";
 
-    // var audio = document.createElement("AUDIO");
-    // audio.volume = 0.2;
-    // document.body.appendChild(audio);
-    // audio.src = "audio/Adie - KABADO.mp3";
+    document.body.addEventListener("mousemove", function () {
+        if (isChrome) {
+            audio.play();
+        }
+    });
 
-    // document.body.addEventListener("mousemove", function () {
-    //     if (isChrome) {
-    //         audio.play();
-    //     }
-    // });
-
-    // Audio.prototype.play = (function (play) {
-    //     return function () {
-    //         var audio = this,
-    //             args = arguments,
-    //             promise = play.apply(soundEffect, args);
-    //     };
-    // })(Audio.prototype.play);
+    Audio.prototype.play = (function (play) {
+        return function () {
+            var audio = this,
+                args = arguments,
+                promise = play.apply(audio, args);
+        };
+    })(Audio.prototype.play);
 
     ("use strict");
 
