@@ -250,7 +250,7 @@ $(document).ready(function () {
     $("#invite_code").on("change", function() {
         var inviteCode = document.getElementById("invite_code");
         var extras = document.getElementById("extras");
-        if (inviteCode.value && MD5(inviteCode.value) === 'b4d6cd609db6bc5e53a1de34121c7106') {
+        if (inviteCode.value && MD5(inviteCode.value) === '1ae215c6cd4ec2b76cc4a74d1595df37') {
             extras.toggleAttribute("disabled", false);
         } else {
             extras.value = "";
